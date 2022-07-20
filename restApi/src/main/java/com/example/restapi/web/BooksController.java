@@ -38,21 +38,4 @@ public class BooksController implements AuthorsNamespace{
         return byId.filter(b -> b.getAuthor().getId().equals(authorId))
                 .map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
-
-//    @PostMapping
-//    public ResponseEntity<Book> createBook(UriComponentsBuilder ucBuilder,
-//                                           @RequestBody Book book){
-//        Book newBook = this.bookRepository.save(book);
-//
-//        return ResponseEntity
-//                .created(ucBuilder.path("/authors/{authorId}/books/{bookId}").buildAndExpand(newBook.getId()).toUri()).build();
-//    }
-
-//    @DeleteMapping("/{authorId}/books/{bookId}")
-//    public ResponseEntity<Book> deleteBook(@PathVariable Long bookId, @PathVaria39ble String authorId){
-//        this.bookRepository.findById(bookId);
-//
-//
-//        return ResponseEntity.noContent().build();
-//    }
 }
